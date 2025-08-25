@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Bom dia, qual é o seu nome? ");
+        String nome = entrada.next();
+
+        System.out.println("Informe sua primeira nota: ");
+        double nota_1 = entrada.nextDouble();
+
+        System.out.println("Agora, diga-me sua segunda nota: ");
+        double nota_2 = entrada.nextDouble();
+
+        double media = (nota_1 + nota_2) / 2;
+
+        if (media < 7.0) {
+            System.out.println("Parece que você foi reprovado." + nome);
+        }
+        else {
+            System.out.println("Você foi aprovado " + nome);
+        }
+    }
+}
+
+// Calculadora de Média Java
