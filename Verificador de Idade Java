@@ -1,22 +1,20 @@
 import java.util.Scanner;
 public class Main {
-
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Bom dia, qual é o seu nome? ");
-        String nome = entrada.next();
+        String nome = sc.nextLine();
 
         System.out.println("Informe sua idade:");
-        int idade = entrada.nextInt();
+        int idade = sc.nextInt();
+        sc.nextLine();
 
         if (idade < 18) {
-            System.out.println("Parece que temos um menor de idade nesse laboratório.");
+            System.out.println("Menor de idade detectado!");
+        } else {
+            System.out.println("Parece que " + nome + "é maior de idade com: " + idade + "anos.");
         }
-        else {
-            System.out.println("Maior de idade");
-        }
+        sc.close();
     }
 }
-
-// Verificador de Idade Java
