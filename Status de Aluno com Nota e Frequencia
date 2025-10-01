@@ -1,59 +1,56 @@
 import java.util.Scanner;
 public class Main {
-
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Bom dia, aluno, qual é o seu nome? ");
-        String nome = entrada.next();
+        System.out.println("Bom dia, aluno(a), qual é o seu nome? ");
+        String nome = sc.nextLine();
 
         System.out.println("Para começar, digite a sua primeira nota: ");
-        double P1 = entrada.nextDouble();
+        double P1 = sc.nextDouble();
 
         System.out.println("Sua segunda nota, por obséquio: ");
-        double P2 = entrada.nextDouble();
+        double P2 = sc.nextDouble();
 
         double media = (P1 + P2) / 2;
         System.out.println("Sua média é: " + media);
 
+        sc.nextLine();
+
         if (media >= 7.0) {
             System.out.println("Você foi aprovado com sucesso! ");
-        }
-        else if (media >=5) {
+        } else if (media >= 5.0) {
             System.out.println("Você está em recuperação, cuidado. ");
-        }
-        else {
+        } else {
             System.out.println("Você foi reprovado por nota. ");
         }
 
-        System.out.println("Agora, vamos verificar sua taxa de presença, quantas vezes você esteve presente em sala? ");
-        double taxa = entrada.nextDouble();
+        System.out.println("Agora, vamos verificar sua taxa de presença. Quantas vezes você esteve presente em sala? ");
+        double taxa = sc.nextDouble();
 
-        if (taxa < 15) {
-            System.out.println("Parece que você foi reprovado por frequência, mais sorte na próxima " + nome);
-        }
-        else {
+        sc.nextLine();
+
+        if (taxa < 15.0) {
+            System.out.println("Parece que você foi reprovado por frequência, mais sorte na próxima, " + nome);
+        } else {
             System.out.println("Você é um aluno que sempre aparece, muito bem! ");
         }
 
-        System.out.println ("Vamos checar a sua situação atual: ");
+        System.out.println("Vamos checar a sua situação atual: ");
 
-        if (media >= 7.0 && taxa >=15) {
-            System.out.println("Você é um aluno exemplar. Parábens pela aprovação," + nome);
+        if (media >= 7.0 && taxa >= 15.0) {
+            System.out.println("Você é um aluno exemplar. Parabéns pela aprovação, " + nome);
+        } else if (media < 7.0 && media >= 5.0 && taxa >= 15.0) {
+            System.out.println("Você está de recuperação, mas tem boa frequência. Boa sorte na prova final, " + nome);
+        } else if (media < 5.0 && taxa >= 15.0) {
+            System.out.println("Você foi reprovado por nota, mas tem boa frequência, se esforce mais na próxima, " + nome);
+        } else if (media >= 7.0 && taxa < 15.0) {
+            System.out.println("Suas notas são boas, mas foi reprovado por falta. Estou sem palavras, " + nome);
+        } else if (media < 5.0 && taxa < 15.0) {
+            System.out.println("Infelizmente, você foi reprovado por nota e por falta. É hora de repensar as suas atitudes, " + nome);
+        } else if (media >= 5.0 && media < 7.0 && taxa < 15.0) {
+            System.out.println("Você está em recuperação, mas também foi reprovado por falta. Infelizmente, não há prova final para você, " + nome);
         }
-        else if (media < 5.0 && taxa <15) {
-            System.out.println("Parabéns, você conseguiu ser reprovado com sucesso, " + nome);
-        }
-        else if (media >= 5.0 && media < 7.0 && taxa >= 15) {
-            System.out.println("Você está de recuperação, mas tem boa frequência. Boa sorte na prova final, ");
-        }
-        else if (media < 5.0 && taxa >= 15) {
-            System.out.println("Você foi reprovado por nota, mas tem boa frequência... isso adiantou de algo? " + nome);
-        }
-        else if (media >= 7.0 && taxa < 15) {
-            System.out.println("Suas notas são boas, mas foi reprovado por falta. Que mico, " + nome);
-        }
-        }
+        sc.close();
     }
-
-// Verificador de Status de Aluno em Java
+}
