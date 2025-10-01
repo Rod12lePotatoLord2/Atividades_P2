@@ -1,24 +1,16 @@
 import java.util.Scanner;
 public class Main {
-
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.println("Bom dia, qual é o seu nome? ");
-        String nome = entrada.next();
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Informe o número que deseja investigar: ");
-        int numero = entrada.nextInt();
-
-        System.out.println("Agora, vamos verificar esse número! " + nome);
+        int numero = sc.nextInt();
 
         if (numero % 2 == 0) {
-            System.out.println("Parece que o nosso número é um número par. " + nome);
+            System.out.println("O número " + numero + " é um número par.");
+        } else {
+            System.out.println("O número " + numero + " é um número ímpar.");
         }
-        else {
-            System.out.println("Esse definitivamente é um número ímpar! " + nome);
-        }
+        sc.close();
     }
 }
-
-// Verificador de Pares e Ímpares Java
