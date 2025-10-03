@@ -1,4 +1,19 @@
-public class Livro {
+public class Main {
+    public static void main(String[] args) {
+        Livro livro1 = new Livro();
+        livro1.setTitulo("Submerged: Uma Competição Tropical");
+        livro1.setAutor("R.L Barbosa");
+
+        livro1.exibirInformacoes();
+        livro1.emprestar();
+        livro1.emprestar();
+        livro1.devolver();
+        livro1.devolver();
+        livro1.exibirInformacoes();
+    }
+}
+
+class Livro {
     private String titulo;
     private String autor;
     private boolean emprestado = false;
