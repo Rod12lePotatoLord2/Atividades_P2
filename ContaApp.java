@@ -1,4 +1,37 @@
-public class ContaBancaria {
+import java.util.Scanner;
+
+public class ContaApp {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        ContaBancaria conta = new ContaBancaria();
+
+        System.out.print("Digite o nome do titular da conta: ");
+        conta.setTitular(input.nextLine());
+
+        System.out.print("Digite o número da conta: ");
+        conta.setNumeroConta(input.nextInt());
+
+        System.out.println("\n--- Informações da Conta ---");
+        System.out.println("Titular: " + conta.getTitular());
+        System.out.println("Número da conta: " + conta.getNumeroConta());
+        conta.exibirSaldo();
+
+        System.out.print("\nDigite o valor do depósito: R$ ");
+        double valorDeposito = input.nextDouble();
+        conta.depositar(valorDeposito);
+        conta.exibirSaldo();
+
+        System.out.print("\nDigite o valor para saque: R$ ");
+        double valorSaque = input.nextDouble();
+        conta.sacar(valorSaque);
+        conta.exibirSaldo();
+
+        input.close();
+    }
+}
+
+// Classe ContaBancaria
+class ContaBancaria {
     private String titular;
     private int numeroConta;
     private double saldo;
